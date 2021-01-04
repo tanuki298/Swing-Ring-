@@ -53,10 +53,13 @@ MonoBehaviour:
   Move: {fileID: 0}
   MoveSpeed: 0.02
   en_size: 1
-  Parfect: 300
-  Great: 600
-  Good: 900
-  miss: 1000
+  Parfect: 100
+  Great: 200
+  Good: 300
+  miss: 400
+  StartScale: 0
+  EndScale: 0.4
+  rate: 0
 --- !u!58 &-7726268538928652078
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -216,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 6424458147610783930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.041, y: -0.14, z: 2.0599377}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.378}
   m_Children: []
   m_Father: {fileID: 8016880065799171821}
   m_RootOrder: 1

@@ -868,7 +868,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4673109d83964654f89cd29ef5738f36, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -965,135 +965,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1244964366}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &859536621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 859536624}
-  - component: {fileID: 859536623}
-  - component: {fileID: 859536622}
-  m_Layer: 0
-  m_Name: "\u30ED\u30F3\u30B0\u30CE\u30FC\u30C4"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &859536622
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859536621}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.5, y: 8.49}
-    newSize: {x: 8.5, y: 8.49}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 3.9499998, y: -1.775}
-      - {x: 3.4199998, y: -0.45499998}
-      - {x: 3.1699998, y: -0.005}
-      - {x: 2.56, y: 0.91499996}
-      - {x: 2.04, y: 1.535}
-      - {x: 1.27, y: 2.2749999}
-      - {x: 0.59999996, y: 2.8149998}
-      - {x: -0.76, y: 3.5749998}
-      - {x: -1.36, y: 3.8049998}
-      - {x: -2.46, y: 4.115}
-      - {x: -3.36, y: 4.245}
-      - {x: -4.25, y: 4.245}
-      - {x: -4.25, y: 3.435}
-      - {x: -1.52, y: 2.915}
-      - {x: 0.32, y: 1.915}
-      - {x: 2.1499999, y: -0.005}
-      - {x: 2.87, y: -1.375}
-      - {x: 3.1499999, y: -2.205}
-      - {x: 3.4299998, y: -4.245}
-      - {x: 4.25, y: -4.245}
-      - {x: 4.25, y: -3.455}
-      - {x: 4.12, y: -2.495}
---- !u!212 &859536623
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859536621}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 73814f6ea9b79994b87334f894d265d5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 8.5, y: 8.49}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &859536624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859536621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.53, y: -0.32, z: 0}
-  m_LocalScale: {x: 0.59562165, y: 0.59562165, z: 0.59562165}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &927156085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4307,7 +4178,7 @@ PrefabInstance:
     - target: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e,
         type: 3}
       propertyPath: MusicName
-      value: 00-04-BPM=RT Easy TEST
+      value: savedata
       objectReference: {fileID: 0}
     - target: {fileID: 8417198108654659079, guid: a436b575ed9a60a4380b0aeb76f40a5e,
         type: 3}
