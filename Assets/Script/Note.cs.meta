@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2653b757ea17e7b4e8a4b0c56bce0d6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - notes_Obj: {fileID: 2151987469059596917, guid: ec375dbf558dddd4aac5f4c56fafb761,
+      type: 3}
+  - timeMane: {fileID: 8281043936419424995, guid: 67df69ae9c21e6f4eb2a4b44a6bcfc97,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7904548623c7e4543bf6bf3f313bd885
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - time: {fileID: 8281043936419424995, guid: 67df69ae9c21e6f4eb2a4b44a6bcfc97, type: 3}
+  - Getnote: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
