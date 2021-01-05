@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
-public class Judge : MonoBehaviour
+public class LongNotes : MonoBehaviour
 {
-    public TimeMane time;
-    public Note Getnote;
+    public Note GetNote;
+    public Judge GetJudge;
     public GameObject Move;
 
-    private int ms;　//ミリ秒
+    private int ms;
     private float ms2;
-    private int s = 0;  //要素数の指定
-    public float MoveSpeed; //動く速度
-    public float en_size; //円のサイズ
 
     //判定の間隔の指定
     public int Parfect;
@@ -30,20 +27,13 @@ public class Judge : MonoBehaviour
     private Vector3 End;
 
     // Start is called before the first frame update
-    private void Awake()
+    void Awake()
     {
-        //Array.Resize(ref note, Getnote.mu.No.Length);
-        transform.parent = GameObject.Find("NotesMane").transform;
-        //gameObject.SetActive(false);
-        Getnote = GetComponentInParent<Note>();
-
         Move = transform.GetChild(1).gameObject;
 
-        Move.gameObject.transform.localScale *= en_size;
-
-        //円の動きに必要な物
-        MoveTime = Getnote.Out_Timing;
-        StartScale = en_size;
+        //円の動きに必よなもの
+        MoveTime = GetNote.Out_Timing;
+        StartScale = GetJudge.en_size;
         Start = new Vector3(StartScale, StartScale, StartScale);
         End = new Vector3(EndScale, EndScale, EndScale);
     }
@@ -51,6 +41,7 @@ public class Judge : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //時間計算
         ms2 += Time.fixedDeltaTime;
         ms = (int)(ms2 * 1000);
 
@@ -58,53 +49,54 @@ public class Judge : MonoBehaviour
         rate = (float)ms / MoveTime;
         Move.transform.localScale = Vector3.Lerp(Start, End, rate);
 
-        if (ms > Getnote.Out_Timing * 2)
+        //一定時間経過で消える
+        if (ms > GetNote.Out_Timing * 2)
         {
-            s++;
-            Debug.Log("miss late");
+            Debug.Log("miss late LOng");
             ms = 0;
             ms2 = 0;
             gameObject.SetActive(false);
         }
     }
-    void OnTriggerEnter2D(Collider2D collider)
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R") //要最適化
+        if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R")
         {
-            if(ms < miss)
+            if (ms < miss)
             {
-                Debug.Log("miss! Fast");
+                Debug.Log("miss! Fast LOng");
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good)
             {
-                Debug.Log("Good! fast");
+                Debug.Log("Good! fast Long");
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good + Great)
             {
-                Debug.Log("Great! fast");
+                Debug.Log("Great! fast Long");
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good + Great + Parfect)
             {
-                Debug.Log("parfect! fast");
+                Debug.Log("parfect! fast Long");
                 gameObject.SetActive(false);
             }
             //-------------折り返し----------------------
             else if (ms < miss + Good + Great + Parfect * 2)
             {
-                Debug.Log("parfect! late");
+                Debug.Log("parfect! late Long");
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good + Great * 2 + Parfect * 2)
             {
-                Debug.Log("Great! late");
+                Debug.Log("Great! late Long");
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good * 2 + Great * 2 + Parfect * 2)
             {
-                Debug.Log("Good! late");
+                Debug.Log("Good! late Long+");
                 gameObject.SetActive(false);
             }
         }

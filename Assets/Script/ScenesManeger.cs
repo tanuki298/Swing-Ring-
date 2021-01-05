@@ -19,7 +19,6 @@ public class ScenesManeger : MonoBehaviour
     void Update()
     {
         Scene_Name = SceneManager.GetActiveScene().name;
-        Debug.Log(Scene_Name + i);
         //Debug.Log(Scene_Name);
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
