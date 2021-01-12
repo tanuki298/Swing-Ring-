@@ -53,7 +53,6 @@ public class Judge : MonoBehaviour
         //ノーツの動き
         rate = (float)ms / MoveTime;
         Move.transform.localScale = Vector3.Lerp(Start, End, rate);
-        Debug.Log(MoveTime + " nomal");
 
         if (ms > Getnote.Out_Timing * 2)
         {

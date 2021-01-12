@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 653184807416941923}
   - component: {fileID: 6018556341491762930}
+  - component: {fileID: 2846902631922541942}
+  - component: {fileID: 6759291414484885424}
+  - component: {fileID: 3990726247144130733}
   m_Layer: 0
   m_Name: "\u30ED\u30F3\u30B0\u30CE\u30FC\u30C4\u3000\u5DE6\u4E0A"
   m_TagString: Untagged
@@ -81,3 +84,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2846902631922541942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479100455280952821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1095ba5e52b593409cbb70e751ab845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GetNote: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e, type: 3}
+  GetJudge: {fileID: 994253598863099095, guid: ec375dbf558dddd4aac5f4c56fafb761, type: 3}
+  Parfect: 0
+  Great: 0
+  Good: 0
+  miss: 0
+  EndScale: 0
+  MoveTime: 0
+--- !u!60 &6759291414484885424
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479100455280952821}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.76, y: 1.77}
+    newSize: {x: 1.76, y: 1.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.88, y: -0.885}
+      - {x: -0.75, y: -0.195}
+      - {x: -0.38, y: 0.375}
+      - {x: 0.26, y: 0.78499997}
+      - {x: 0.88, y: 0.885}
+      - {x: 0.88, y: 0.525}
+      - {x: 0.34, y: 0.445}
+      - {x: -0.16, y: 0.085}
+      - {x: -0.45, y: -0.33499998}
+      - {x: -0.53, y: -0.885}
+--- !u!50 &3990726247144130733
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479100455280952821}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -33,9 +33,11 @@ public class LongNotes : MonoBehaviour
 
         GetNote = GetComponentInParent<Note>();
 
-        Move = transform.GetChild(1).gameObject;
-
-        Move.gameObject.transform.localScale *= GetJudge.en_size;
+        if(gameObject.tag == "LongNotes")
+        { 
+            Move = transform.GetChild(1).gameObject;
+            Move.gameObject.transform.localScale *= GetJudge.en_size;
+        }
 
         //円の動きに必よなもの
         MoveTime = GetNote.Out_Timing;
@@ -52,9 +54,11 @@ public class LongNotes : MonoBehaviour
         ms = (int)(ms2 * 1000);
 
         //ノーツの動き
-        rate = (float)ms / MoveTime;
-        Move.transform.localScale = Vector3.Lerp(Start, End, rate);
-        Debug.Log(MoveTime + " Long");
+        if (gameObject.tag == "LongNotes")
+        {
+            rate = (float)ms / MoveTime;
+            Move.transform.localScale = Vector3.Lerp(Start, End, rate);
+        }
 
         //一定時間経過で消える
         if (ms > GetNote.Out_Timing * 2)
@@ -68,7 +72,7 @@ public class LongNotes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R")
+        if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R" && gameObject.tag =="LongNotes")
         {
             if (ms < miss)
             {
@@ -106,6 +110,14 @@ public class LongNotes : MonoBehaviour
                 Debug.Log("Good! late Long+");
                 gameObject.SetActive(false);
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R" && gameObject.tag == "LongNotesBar")
+        {
+
         }
     }
 }

@@ -3,7 +3,11 @@ guid: b1095ba5e52b593409cbb70e751ab845
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - GetNote: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e,
+      type: 3}
+  - GetJudge: {fileID: 994253598863099095, guid: ec375dbf558dddd4aac5f4c56fafb761,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

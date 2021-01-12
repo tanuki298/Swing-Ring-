@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player_R
+  - Player_L
+  - Notes
+  - LongNotesBer
+  - LongNotes
   layers:
   - Default
   - TransparentFX
