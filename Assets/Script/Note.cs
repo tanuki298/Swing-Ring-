@@ -78,31 +78,150 @@ public class Note : MonoBehaviour
     }
     void FixedUpdate()
     {
-        ms = timeMane.Mse;
+        ms = timeMane.Mse - Out_Timing;
 
         //ノーツ生成　左
         if (ms >= mu.ms[s] + mu.Offset - Out_Timing && mu.LR[s] == "L") //生成時間の確認と右か左可の確認
         {
-            Instantiate(notes_Obj, L_Notes_point_obj[mu.pos[s]].transform.position, Quaternion.identity);
-            s++;
+            if (mu.Long[s] == false)
+            {
+                Instantiate(notes_Obj, L_Notes_point_obj[mu.pos[s]].transform.position, Quaternion.identity);
+                s++;
+            }
+            else
+            {
+                Instantiate(Long_Notes_Obj, L_Notes_point_obj[Long_Pos[L]].transform.position, Quaternion.identity); //ロングノーツ通常
+                L++;
+                if (L < Long_Pos.Count)
+                {
+                    switch (Long_Pos[L - 1])
+                    {
+                        case 0:
+                            switch (Long_Pos[L])
+                            {
+                                case 2:
+                                    Instantiate(longNotesBer[0], L_LongNotes_Point_obj[0].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                                case 6:
+                                    Instantiate(longNotesBer[3], L_LongNotes_Point_obj[3].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (Long_Pos[L])
+                            {
+                                case 0:
+                                    Instantiate(longNotesBer[0], L_LongNotes_Point_obj[0].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                                case 4:
+                                    Instantiate(longNotesBer[1], L_LongNotes_Point_obj[1].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                            }
+                            break;
+                        case 4:
+                            switch (Long_Pos[L])
+                            {
+                                case 2:
+                                    Instantiate(longNotesBer[1], L_LongNotes_Point_obj[1].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                                case 6:
+                                    Instantiate(longNotesBer[2], L_LongNotes_Point_obj[2].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                            }
+                            break;
+                        case 6:
+                            switch (Long_Pos[L])
+                            {
+                                case 0:
+                                    Instantiate(longNotesBer[3], L_LongNotes_Point_obj[3].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                                case 4:
+                                    Instantiate(longNotesBer[2], L_LongNotes_Point_obj[2].transform.position, Quaternion.identity);
+                                    //L++;
+                                    break;
+                            }
+                            break;
+                    }
+                }
+                s++;
+            }
         }
 
         //ノーツ生成　右
         if (ms >= mu.ms[s] + mu.Offset - Out_Timing && mu.LR[s] == "R") //生成時間の確認と右か左可の確認
         {
-            if (mu.Long[s] == false) 
+            if (mu.Long[s] == false)
             {
-                Instantiate(notes_Obj, R_Notes_point_obj[mu.pos[s]].transform.position, Quaternion.identity);
+                Instantiate(notes_Obj, R_Notes_point_obj[mu.pos[s]].transform.position, Quaternion.identity);　//通常ノーツ
                 s++;
             }
             else
             {
-                if (L < Long_No.Count)
+                Instantiate(Long_Notes_Obj, R_Notes_point_obj[Long_Pos[L]].transform.position, Quaternion.identity); //ロングノーツ通常
+                L++;
+                switch (Long_Pos[L - 1])
                 {
-                    Instantiate(Long_Notes_Obj, R_Notes_point_obj[Long_Pos[L]].transform.position, Quaternion.identity);
-                    L++;
-                    s++;
+                    case 0:
+                        switch (Long_Pos[L])
+                        {
+                            case 2:
+                                Instantiate(longNotesBer[0], R_LongNotes_Point_obj[0].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                            case 6:
+                                Instantiate(longNotesBer[3], R_LongNotes_Point_obj[3].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (Long_Pos[L])
+                        {
+                            case 0:
+                                Instantiate(longNotesBer[0], R_LongNotes_Point_obj[0].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                            case 4:
+                                Instantiate(longNotesBer[1], R_LongNotes_Point_obj[1].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch (Long_Pos[L])
+                        {
+                            case 2:
+                                Instantiate(longNotesBer[1], R_LongNotes_Point_obj[1].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                            case 6:
+                                Instantiate(longNotesBer[2], R_LongNotes_Point_obj[2].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch (Long_Pos[L])
+                        {
+                            case 0:
+                                Instantiate(longNotesBer[3], R_LongNotes_Point_obj[3].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                            case 4:
+                                Instantiate(longNotesBer[2], R_LongNotes_Point_obj[2].transform.position, Quaternion.identity);
+                                //L++;
+                                break;
+                        }
+                        break;
                 }
+                s++;
             }
         }
     }

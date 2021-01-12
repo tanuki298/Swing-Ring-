@@ -7,7 +7,7 @@ public class LongNotes : MonoBehaviour
 {
     public Note GetNote;
     public Judge GetJudge;
-    public GameObject Move;
+    private GameObject Move;
 
     private int ms;
     private float ms2;
@@ -19,17 +19,23 @@ public class LongNotes : MonoBehaviour
     public int miss;
 
     //ノーツの動き
-    public float StartScale;
+    private float StartScale;
     public float EndScale;
     private float rate;
-    private int MoveTime;
+    public int MoveTime;
     private Vector3 Start;
     private Vector3 End;
 
     // Start is called before the first frame update
     void Awake()
     {
+        transform.parent = GameObject.Find("NotesMane").transform;
+
+        GetNote = GetComponentInParent<Note>();
+
         Move = transform.GetChild(1).gameObject;
+
+        Move.gameObject.transform.localScale *= GetJudge.en_size;
 
         //円の動きに必よなもの
         MoveTime = GetNote.Out_Timing;
@@ -48,6 +54,7 @@ public class LongNotes : MonoBehaviour
         //ノーツの動き
         rate = (float)ms / MoveTime;
         Move.transform.localScale = Vector3.Lerp(Start, End, rate);
+        Debug.Log(MoveTime + " Long");
 
         //一定時間経過で消える
         if (ms > GetNote.Out_Timing * 2)

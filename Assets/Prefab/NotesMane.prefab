@@ -45,13 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mu:
     Name: 
-    Music_Name: 
-    BPM: 0
     Offset: 0
     LR: []
-    No: 
     pos: 
     ms: 
+    Long: 
   L_Notes_point_obj:
   - {fileID: 0}
   - {fileID: 0}
@@ -66,6 +64,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  L_LongNotes_Point_obj:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -88,13 +91,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  R_LongNotes_Point_obj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   notes_Obj: {fileID: 2151987469059596917, guid: ec375dbf558dddd4aac5f4c56fafb761,
     type: 3}
-  o: 0
-  Out_Timing: 5000
+  Long_Notes_Obj: {fileID: 1286237507758456214, guid: ae3659380f2542a4388bbe9f8987eb8d,
+    type: 3}
+  longNotesBer: []
+  Out_Timing: 1000
   Move_Speed: 0
   timeMane: {fileID: 0}
   ms: 0
-  beet: 0
   s: 0
   ko: 0
+  MusicName: savedata

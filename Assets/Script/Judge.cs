@@ -1,18 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 
 public class Judge : MonoBehaviour
 {
     public TimeMane time;
     public Note Getnote;
-    public GameObject Move;
+    private GameObject Move;
 
     private int ms;　//ミリ秒
     private float ms2;
     private int s = 0;  //要素数の指定
-    public float MoveSpeed; //動く速度
     public float en_size; //円のサイズ
 
     //判定の間隔の指定
@@ -22,7 +18,7 @@ public class Judge : MonoBehaviour
     public int miss;
 
     //ノーツの動き
-    public float StartScale;
+    private float StartScale;
     public float EndScale;
     private float rate;
     private int MoveTime;
@@ -57,6 +53,7 @@ public class Judge : MonoBehaviour
         //ノーツの動き
         rate = (float)ms / MoveTime;
         Move.transform.localScale = Vector3.Lerp(Start, End, rate);
+        Debug.Log(MoveTime + " nomal");
 
         if (ms > Getnote.Out_Timing * 2)
         {
