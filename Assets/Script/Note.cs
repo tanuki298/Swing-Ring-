@@ -27,13 +27,14 @@ public class Note : MonoBehaviour
 
     public int Out_Timing; //判定のタイミングからどれだけの時間を引くかの指定先
     public float Move_Speed;　//円の動く速度
+    public int LongBerTrget; //ロングノーツの乗せる時間
 
     public TimeMane timeMane;  //タイムマネージャーから時間の取得
     public int ms;　//時間の格納先
 
     public int s = 0; //カウント
     private int L;
-    public int ko = 0; //子供の数
+    public int ko; //子供の数
 
     public string MusicName = "savedata"; //ファイル読み込み時の名前テスト用（ここを曲名にすればOK）
 
@@ -69,6 +70,9 @@ public class Note : MonoBehaviour
             Long_Pos.Add(mu.pos[Long_No[i]]);
             Long_LR.Add(mu.LR[Long_No[i]]);
         }
+
+        ko = mu.LR.Length;
+        Debug.Log(ko);
     }
 
     // Update is called once per frame

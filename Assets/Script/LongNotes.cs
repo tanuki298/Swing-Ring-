@@ -12,6 +12,11 @@ public class LongNotes : MonoBehaviour
     private int ms;
     private float ms2;
 
+    //ロングの棒用時間
+    private int Long_ms;
+    private float Long_ms2;
+    private int Long_trget;
+
     //判定の間隔の指定
     public int Parfect;
     public int Great;
@@ -26,6 +31,12 @@ public class LongNotes : MonoBehaviour
     private Vector3 Start;
     private Vector3 End;
 
+    //判定のカウント
+    public int Parfect_count;
+    public int Great_count;
+    public int Good_count;
+    public int miss_count;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,6 +49,8 @@ public class LongNotes : MonoBehaviour
             Move = transform.GetChild(1).gameObject;
             Move.gameObject.transform.localScale *= GetJudge.en_size;
         }
+
+        Long_trget = GetNote.LongBerTrget; //乗せる時間を取得
 
         //円の動きに必よなもの
         MoveTime = GetNote.Out_Timing;
@@ -64,60 +77,87 @@ public class LongNotes : MonoBehaviour
         if (ms > GetNote.Out_Timing * 2)
         {
             Debug.Log("miss late LOng");
+            miss_count++;
             ms = 0;
             ms2 = 0;
+            Long_ms = 0;
+            Long_ms2 = 0;
             gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R" && gameObject.tag =="LongNotes")
+        if (gameObject.tag == "LongNotes")
         {
-            if (ms < miss)
+            if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R")
             {
-                Debug.Log("miss! Fast LOng");
-                gameObject.SetActive(false);
-            }
-            else if (ms < miss + Good)
-            {
-                Debug.Log("Good! fast Long");
-                gameObject.SetActive(false);
-            }
-            else if (ms < miss + Good + Great)
-            {
-                Debug.Log("Great! fast Long");
-                gameObject.SetActive(false);
-            }
-            else if (ms < miss + Good + Great + Parfect)
-            {
-                Debug.Log("parfect! fast Long");
-                gameObject.SetActive(false);
-            }
-            //-------------折り返し----------------------
-            else if (ms < miss + Good + Great + Parfect * 2)
-            {
-                Debug.Log("parfect! late Long");
-                gameObject.SetActive(false);
-            }
-            else if (ms < miss + Good + Great * 2 + Parfect * 2)
-            {
-                Debug.Log("Great! late Long");
-                gameObject.SetActive(false);
-            }
-            else if (ms < miss + Good * 2 + Great * 2 + Parfect * 2)
-            {
-                Debug.Log("Good! late Long+");
-                gameObject.SetActive(false);
+                if (ms < miss)
+                {
+                    Debug.Log("miss! Fast LOng");
+                    miss_count++;
+                    gameObject.SetActive(false);
+                }
+                else if (ms < miss + Good)
+                {
+                    Debug.Log("Good! fast Long");
+                    Good_count++;
+                    gameObject.SetActive(false);
+                }
+                else if (ms < miss + Good + Great)
+                {
+                    Debug.Log("Great! fast Long");
+                    Great_count++;
+                    gameObject.SetActive(false);
+                }
+                else if (ms < miss + Good + Great + Parfect)
+                {
+                    Debug.Log("parfect! fast Long");
+                    Parfect_count++;
+                    gameObject.SetActive(false);
+                }
+                //-------------折り返し----------------------
+                else if (ms < miss + Good + Great + Parfect * 2)
+                {
+                    Debug.Log("parfect! late Long");
+                    Parfect_count++;
+                    gameObject.SetActive(false);
+                }
+                else if (ms < miss + Good + Great * 2 + Parfect * 2)
+                {
+                    Debug.Log("Great! late Long");
+                    Great_count++;
+                    gameObject.SetActive(false);
+                }
+                else if (ms < miss + Good * 2 + Great * 2 + Parfect * 2)
+                {
+                    Debug.Log("Good! late Long+");
+                    Good_count++;
+                    gameObject.SetActive(false);
+                }
             }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R" && gameObject.tag == "LongNotesBar")
-        {
+        //if (gameObject.tag == "LongNotesBar")
+        //{
+            if (collider.gameObject.tag == "Player_L" || collider.gameObject.tag == "Player_R")
+            {
+                Long_ms2 += Time.fixedDeltaTime;
+                Long_ms = (int)(ms2 * 1000);
+                if (Long_ms >= Long_trget)
+                {
+                    Debug.Log("Ber_OK");
+                    gameObject.SetActive(false);
+                }
+            }
+        //}
+    }
 
-        }
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        
     }
 }

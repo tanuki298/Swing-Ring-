@@ -37,7 +37,7 @@ public class ScenesManeger : MonoBehaviour
             SceneManager.LoadScene("Result");
         }
         //別のシーンを上に重ねることができる。これでポーズなどが実装できる
-        if (Input.GetKeyDown(KeyCode.Return) && Scene_Name == "MusicSelect")
+        if (Input.GetKeyDown(KeyCode.M) && Scene_Name == "MusicSelect")
         {
             Application.LoadLevelAdditive("Option");
             i = 1;

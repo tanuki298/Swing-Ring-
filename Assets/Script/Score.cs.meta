@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f2abec56db1db8c44af64635dc0b765c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - score: {instanceID: 0}
+  - GetJudge: {fileID: 994253598863099095, guid: ec375dbf558dddd4aac5f4c56fafb761,
+      type: 3}
+  - GetLong: {fileID: 1849587558620160138, guid: ae3659380f2542a4388bbe9f8987eb8d,
+      type: 3}
+  - GetNote: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

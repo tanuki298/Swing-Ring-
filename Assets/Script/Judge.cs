@@ -25,6 +25,12 @@ public class Judge : MonoBehaviour
     private Vector3 Start;
     private Vector3 End;
 
+    //判定のカウント
+    public int Parfect_count;
+    public int Great_count;
+    public int Good_count;
+    public int miss_count;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -58,6 +64,7 @@ public class Judge : MonoBehaviour
         {
             s++;
             Debug.Log("miss late");
+            miss_count++;
             ms = 0;
             ms2 = 0;
             gameObject.SetActive(false);
@@ -70,37 +77,44 @@ public class Judge : MonoBehaviour
             if(ms < miss)
             {
                 Debug.Log("miss! Fast");
+                miss_count++;
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good)
             {
                 Debug.Log("Good! fast");
+                Good_count++;
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good + Great)
             {
                 Debug.Log("Great! fast");
+                Great_count++;
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good + Great + Parfect)
             {
                 Debug.Log("parfect! fast");
+                Parfect_count++;
                 gameObject.SetActive(false);
             }
             //-------------折り返し----------------------
             else if (ms < miss + Good + Great + Parfect * 2)
             {
                 Debug.Log("parfect! late");
+                Parfect_count++;
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good + Great * 2 + Parfect * 2)
             {
                 Debug.Log("Great! late");
+                Great_count++;
                 gameObject.SetActive(false);
             }
             else if (ms < miss + Good * 2 + Great * 2 + Parfect * 2)
             {
                 Debug.Log("Good! late");
+                Good++;
                 gameObject.SetActive(false);
             }
         }

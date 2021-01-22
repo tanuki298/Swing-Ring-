@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3990726247144130733}
   m_Layer: 0
   m_Name: "\u30ED\u30F3\u30B0\u30CE\u30FC\u30C4\u3000\u5DE6\u4E0A"
-  m_TagString: Untagged
+  m_TagString: LongNotesBer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetNote: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e, type: 3}
   GetJudge: {fileID: 994253598863099095, guid: ec375dbf558dddd4aac5f4c56fafb761, type: 3}
+  Long_trget: 100
   Parfect: 0
   Great: 0
   Good: 0

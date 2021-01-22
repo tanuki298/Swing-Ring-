@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetNote: {fileID: 8417198108654659078, guid: a436b575ed9a60a4380b0aeb76f40a5e, type: 3}
   GetJudge: {fileID: 994253598863099095, guid: ec375dbf558dddd4aac5f4c56fafb761, type: 3}
+  Long_trget: 0
   Parfect: 100
   Great: 200
   Good: 300
